@@ -1,0 +1,54 @@
+[
+  { "value": "CANADA", "hint": "a country in North America" },
+  { "value": "PYTHON", "hint": "a programming language" },
+  { "value": "JAVASCRIPT", "hint": "a language used for web development" },
+  { "value": "HANGMAN", "hint": "the name of this game" },
+  { "value": "COMPUTER", "hint": "an electronic device" },
+  { "value": "KEYBOARD", "hint": "used to type on a computer" },
+  { "value": "MOUSE", "hint": "a computer pointing device" },
+  { "value": "MONITOR", "hint": "a computer screen" },
+  { "value": "LAPTOP", "hint": "a portable computer" },
+  { "value": "SOFTWARE", "hint": "programs that run on a computer" },
+
+  { "value": "HARDWARE", "hint": "physical parts of a computer" },
+  { "value": "PROGRAM", "hint": "a set of instructions for a computer" },
+  { "value": "DEVELOPER", "hint": "a person who writes code" },
+  { "value": "ALGORITHM", "hint": "a step-by-step solution" },
+  { "value": "DEBUG", "hint": "to fix errors in code" },
+
+  { "value": "ELEPHANT", "hint": "a large land animal with a trunk" },
+  { "value": "GIRAFFE", "hint": "tallest land animal" },
+  { "value": "LION", "hint": "king of the jungle" },
+  { "value": "TIGER", "hint": "a striped big cat" },
+  { "value": "BEAR", "hint": "a large furry mammal" },
+
+  { "value": "PENGUIN", "hint": "a flightless bird in Antarctica" },
+  { "value": "EAGLE", "hint": "a powerful flying bird" },
+  { "value": "DOLPHIN", "hint": "a smart marine mammal" },
+  { "value": "SHARK", "hint": "a dangerous ocean predator" },
+  { "value": "WHALE", "hint": "the largest ocean animal" },
+
+  { "value": "BANANA", "hint": "a long yellow fruit" },
+  { "value": "APPLE", "hint": "a popular red or green fruit" },
+  { "value": "ORANGE", "hint": "a citrus fruit and color name" },
+  { "value": "STRAWBERRY", "hint": "a small red fruit with seeds" },
+  { "value": "PINEAPPLE", "hint": "a tropical spiky fruit" },
+
+  { "value": "HAMBURGER", "hint": "a popular fast food sandwich" },
+  { "value": "PIZZA", "hint": "Italian dish with cheese and toppings" },
+  { "value": "PASTA", "hint": "an Italian noodle dish" },
+  { "value": "SUSHI", "hint": "a Japanese rice and fish dish" },
+  { "value": "TACO", "hint": "a Mexican folded tortilla dish" },
+
+  { "value": "TORONTO", "hint": "largest city in Canada" },
+  { "value": "VANCOUVER", "hint": "a coastal city in Canada" },
+  { "value": "OTTAWA", "hint": "capital city of Canada" },
+  { "value": "MONTREAL", "hint": "a major city in Quebec" },
+  { "value": "CALGARY", "hint": "a city in Alberta known for oil and rodeo" },
+
+  { "value": "SOCCER", "hint": "the world's most popular sport" },
+  { "value": "HOCKEY", "hint": "a fast ice sport popular in Canada" },
+  { "value": "BASKETBALL", "hint": "a sport with hoops and a ball" },
+  { "value": "BASEBALL", "hint": "a bat-and-ball sport" },
+  { "value": "TENNIS", "hint": "a racket sport played on a court" }
+]
