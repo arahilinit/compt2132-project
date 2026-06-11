@@ -2,202 +2,226 @@
 Abtin Rahili Nejad
 */
 @import url("normalize.css");
-
-html{
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 24px;
-    overflow-wrap: break-word;
+html {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  overflow-wrap: break-word;
 }
+
 *, *:before, *:after {
-    box-sizing: inherit;
-}
-img{
-	max-width: 100%;
-	height: auto;
+  box-sizing: inherit;
 }
 
-body{
-    margin: 0; /* Removes space around */
-    background-color: rgb(50, 50, 50);
+img {
+  max-width: 100%;
+  height: auto;
 }
-header{
-    position: sticky;
-    top: 0; /* make the header stick when you reach its scroll position */
-    border-bottom: 2px solid rgb(0, 0, 0);
-    padding: 10px;
-    background-color: rgba(195, 32, 95);
-    z-index: 1000;
+
+body {
+  margin: 0; /* Removes space around */
+  background-color: rgb(50, 50, 50);
 }
-main{
-    padding: 20px;
-    flex:1; /* Sticky footer */
+
+header {
+  position: sticky;
+  top: 0; /* make the header stick when you reach its scroll position */
+  border-bottom: 2px solid rgb(0, 0, 0);
+  padding: 10px;
+  background-color: rgb(195, 32, 95);
+  z-index: 1000;
 }
-footer{
-    padding: 10px;
-    border-top: 2px solid rgb(0, 0, 0);
-    background-color: #000000;
+
+main {
+  padding: 20px;
+  flex: 1; /* Sticky footer */
 }
-h1{
-    text-align: center;
+
+footer {
+  padding: 10px;
+  border-top: 2px solid rgb(0, 0, 0);
+  background-color: #000000;
 }
-a, a:link{
-    text-decoration: none;
-    color: rgb(0, 225, 165);
-    font-size: 1.5em;
+
+h1 {
+  text-align: center;
 }
-a:visited{
-    color: rgb(57, 0, 156);
+
+a, a:link {
+  text-decoration: none;
+  color: rgb(0, 225, 165);
+  font-size: 1.5em;
 }
-a:hover{
-    background-color: blueviolet;
+
+a:visited {
+  color: rgb(57, 0, 156);
 }
-a:focus, a:active{
-    color: darkorange;
+
+a:hover {
+  background-color: blueviolet;
 }
-article{
-    background-color: rgb(214, 107, 30, 0.8);
-    padding: 20px;
-    font-size: 1.5em;
+
+a:focus, a:active {
+  color: darkorange;
 }
-p{
-    max-width: 1000px;
+
+article {
+  background-color: rgba(214, 107, 30, 0.8);
+  padding: 20px;
+  font-size: 1.5em;
 }
-figure{
-    padding: 5px;
+
+p {
+  max-width: 1000px;
 }
-button{
-    font-size: 0.5em;
-    flex: 1 1 auto;
-    max-width: 100px; 
+
+figure {
+  padding: 5px;
 }
-.footer-h2{
-    color: white;
+
+button {
+  font-size: 0.5em;
+  flex: 1 1 auto;
+  max-width: 100px;
 }
-.ul-row{
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    background-color: rgb(39, 11, 11);
-    padding: 10px;
-    border-radius: 15px;
-    border: 2px solid blue;
+
+.footer-h2 {
+  color: white;
 }
+
+.ul-row {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  background-color: rgb(39, 11, 11);
+  padding: 10px;
+  border-radius: 15px;
+  border: 2px solid blue;
+}
+
 .button {
-    text-align: center;
-    border: 1px solid #ffffff;
-    background: #000000;
-    color: yellow;
+  text-align: center;
+  border: 1px solid #ffffff;
+  background: #000000;
+  color: yellow;
 }
 
 .pressedButton {
-    opacity: 0.4;
+  opacity: 0.4;
 }
-#wrapper{
-    min-height: 100vh; /* Sticky footer */
-    display:flex; /* Sticky footer */
-    flex-direction: column; /* Sticky footer */
-    max-width: 1500px; /* max page width */
-    margin: auto; /* center page */
-    background-color: rgba(60, 146, 159);
-    border-right: 1.5px dashed rgb(0, 0, 0);
-    border-left: 1.5px dashed rgb(0, 0, 0);
+
+#wrapper {
+  min-height: 100vh; /* Sticky footer */
+  display: flex; /* Sticky footer */
+  flex-direction: column; /* Sticky footer */
+  max-width: 1500px; /* max page width */
+  margin: auto; /* center page */
+  background-color: rgb(60, 146, 159);
+  border-right: 1.5px dashed rgb(0, 0, 0);
+  border-left: 1.5px dashed rgb(0, 0, 0);
 }
-#footer-ul{
-    list-style-type: none;
-    padding-left: 0; /* remove left padding of list */
-    margin-top: 10px;
+
+#footer-ul {
+  list-style-type: none;
+  padding-left: 0; /* remove left padding of list */
+  margin-top: 10px;
 }
+
 #keyboard {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
-    gap: 20px;
-    width: 100%;
-    max-width: 800px;
-    margin: 10px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: 10px auto;
 }
+
 #output {
-    text-align: center;
-    font-size: 1.5em;
-    font-weight: bold;
-    margin-bottom: 20px;
-    letter-spacing: 10px; 
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: 10px;
 }
+
 #hint {
-    text-align: center;
-    font-size: 1.2em;
-    color: #135000;
-    font-weight: 600;
-    margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #135000;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
+
 #guesses {
-    max-width: 300px;
-    margin: 20px auto;
-    padding: 15px;
-    text-align: center;
-    font-weight: 1.2em;
-    border: 2px solid #004b96;
-    color: #b81c1c;
+  max-width: 300px;
+  margin: 20px auto;
+  padding: 15px;
+  text-align: center;
+  font-weight: 1.2em;
+  border: 2px solid #004b96;
+  color: #b81c1c;
 }
+
 #hangman-img {
-    display: block;
-    margin: 20px auto;
-    max-width: 300px;
+  display: block;
+  margin: 20px auto;
+  max-width: 300px;
 }
-#game-popup{
-    display: none;
-    position:fixed;
-    top:0px;
-    left:0px;    
-    width:100vw;
-    height:100vh;    
-	z-index:1000;
-	background-color: rgba(45, 66, 66, .8);    
-	font-size:.85em;
-}
-#game-popup div{
-	position:absolute;
-	left:50%;
-	top:50%;
-	transform:translate(-50%, -50%);
-	max-width:400px;
-	min-width:300px;
-	padding:10px;
-	border-radius:10px;
-	box-shadow: 0 0 0 2px rgb(145, 197, 199),
-		        0 0 0 4px cadetblue, 
-				0 0 0 8px rgb(39, 103, 105);;
-	background-color: cadetblue;
-	color:white;
 
-    text-align: center;
+#game-popup {
+  display: none;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  background-color: rgba(45, 66, 66, 0.8);
+  font-size: 0.85em;
 }
+
+#game-popup div {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 400px;
+  min-width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 0 2px rgb(145, 197, 199), 0 0 0 4px cadetblue, 0 0 0 8px rgb(39, 103, 105);
+  background-color: cadetblue;
+  color: white;
+  text-align: center;
+}
+
 #play-again-button {
-    background-color: white;
-    color: rgb(14, 86, 89);
-    font-weight: bold;
-    border: solid 2px rgb(14, 86, 89);
-    cursor: pointer;
-    font-size: 1.2rem;   
-    padding: 10px;  
-    min-width: 160px;    
+  background-color: white;
+  color: rgb(14, 86, 89);
+  font-weight: bold;
+  border: solid 2px rgb(14, 86, 89);
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 10px;
+  min-width: 160px;
 }
 
-@media (min-width: 1000px){
-    footer{
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
-    }
-    .footer-ul-row{
-        display: flex;
-        justify-content: space-between;
-        gap: 55px;
-    }
-    .footer-li{
-        flex: 1;
-        margin: 15px;
-        width: 150px; 
-    }
+@media (min-width: 1000px) {
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-ul-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 55px;
+  }
+  .footer-li {
+    flex: 1;
+    margin: 15px;
+    width: 150px;
+  }
 }
 
+/*# sourceMappingURL=style.css.map */

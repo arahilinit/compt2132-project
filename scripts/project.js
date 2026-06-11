@@ -14,7 +14,7 @@ const popupImageElement = document.getElementById("popup-image");
 const playAgainBtn = document.getElementById("play-again-button");
 const winningImageNumber = 6;
 const losingImageNumber = 5;
-const jsonFilePath = '../json/words.json';
+const jsonFilePath = '../data/words.json';
 
 let wordList = [];
 let secretWord = "";
@@ -25,9 +25,30 @@ let animationProgress = 0;
 let popupAnimation;
 
 
+class SecretWord 
+{
+    #value;
+    #hint;
+
+    constructor(value, hint) 
+    {
+        this.#value = value;
+        this.#hint = hint;
+    }
+
+    get getValue() {
+        return this.#value;
+    }
+
+    get getHint() {
+        return this.#hint;
+    }
+}
+
+
 function animatePopup() {
    
-    animationProgress += 0.02; 
+    animationProgress += 0.01; 
 
     popupElement.style.opacity = animationProgress;
 
@@ -77,8 +98,8 @@ playAgainBtn.addEventListener("click", function() {
 
     
     const newJsonObject = wordList[Math.floor(Math.random() * wordList.length)];
-    secretWord = newJsonObject.value;
-    hint = newJsonObject.hint;
+    secretWord = newJsonObject.getValue;
+    hint = newJsonObject.getHint;
 
     guessedLetters = [];
     for (let i = 0; i < secretWord.length; i++) {
@@ -146,18 +167,31 @@ function createKeyboard()
                 if (!letterFound)
                 {
                     numberOfIncorrectGuesses++;
+                    guessesElement.innerHTML = `Incorrect Guesses: ${numberOfIncorrectGuesses}/${numberOfAllowedGuesses}`;
+                    hangmanImageElement.src = `../images/image${numberOfIncorrectGuesses}.png`;
                 }
-                guessesElement.innerHTML = `Incorrect Guesses: ${numberOfIncorrectGuesses}/${numberOfAllowedGuesses}`;
-                hangmanImageElement.src = `../images/image${numberOfIncorrectGuesses}.png`;
+                
 
                
-                if (!guessedLetters.includes("_")) 
-                {
+                let includesUnderscore = false;
+
+                for (let i = 0; i < guessedLetters.length; i++) {
+                    if (guessedLetters[i] === "_") {
+                        includesUnderscore = true;
+                        break;
+                    }
+                }
+
+                if (!includesUnderscore) {
                     showWinPopup();
                 }
-                if (numberOfIncorrectGuesses >= numberOfAllowedGuesses) 
-                {
+
+                else if (numberOfIncorrectGuesses >= numberOfAllowedGuesses) {
                     showLosePopup();
+                }
+                else
+                {
+                    //nothing to do
                 }
              
                 
@@ -181,12 +215,16 @@ function init()
     }).then(function (data) 
     {
             
-        wordList = data;
+        for (let i = 0; i < data.length; i++) 
+        {
+            const item = data[i];
+            wordList.push(new SecretWord(item.value, item.hint));
+        }
 
         const newJsonObject = wordList[Math.floor(Math.random() * wordList.length)];
         //console.log("wordList:", wordList);
-        secretWord = newJsonObject.value;
-        hint = newJsonObject.hint;
+        secretWord = newJsonObject.getValue;
+        hint = newJsonObject.getHint;
 
         for (let i = 0; i < secretWord.length; i++) 
         {
@@ -200,7 +238,7 @@ function init()
     })
     .catch(function (error) 
     {
-        console.error("Catch fetch error");
+        console.error("Catch fetch error" + error);
     });
 }
 
