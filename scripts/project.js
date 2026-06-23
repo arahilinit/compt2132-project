@@ -45,8 +45,8 @@ class SecretWord
     }
 }
 
-
-function animatePopup() {
+function animatePopup() 
+{
    
     animationProgress += 0.01; 
 
@@ -61,43 +61,37 @@ function animatePopup() {
         cancelAnimationFrame(popupAnimation);
     }
 }
-function showWinPopup () {
-    
-    popupTitleElement.innerHTML = "You Win!";
-    popupMessageElement.innerHTML = `The word was "${secretWord}".`;
-    popupTitleElement.style.color = "green";
 
+function showPopup(userWon) 
+{    
+    if(userWon) 
+    {
+        popupTitleElement.style.color = "green";
+        popupTitleElement.innerHTML = "You Win!";
+        popupMessageElement.innerHTML = `The word was "${secretWord}".`;
+        popupImageElement.src = `../images/image${winningImageNumber}.png`
+    }
+    else
+    {
+        popupTitleElement.style.color = "red";
+        popupTitleElement.innerHTML = "Game Over";
+        popupMessageElement.innerHTML = `The word was "${secretWord}".`;
+        popupImageElement.src = `../images/image${losingImageNumber}.png`
+
+    }
     
-    popupImageElement.src = `../images/image${winningImageNumber}.png`
     popupElement.style.opacity = 0;
     popupElement.style.display = "block";
     animationProgress = 0;
     animatePopup();
 }
 
-function showLosePopup () {
-    
-    popupTitleElement.innerHTML = "Game Over";
-    popupMessageElement.innerHTML = `The word was "${secretWord}".`;
-    popupTitleElement.style.color = "red";
-
-    popupImageElement.src = `../images/image${losingImageNumber}.png`
-    popupElement.style.opacity = 0;
-    popupElement.style.display = "block";
-
-    animationProgress = 0;
-    animatePopup();
-}
-
-
-
-playAgainBtn.addEventListener("click", function() {
-    popupElement.style.display = "none";
-
-    numberOfIncorrectGuesses = 0;
-
-    
+playAgainBtn.addEventListener("click", function() 
+{
     const newJsonObject = wordList[Math.floor(Math.random() * wordList.length)];
+    
+    popupElement.style.display = "none";
+    numberOfIncorrectGuesses = 0;
     secretWord = newJsonObject.getValue;
     hint = newJsonObject.getHint;
 
@@ -106,21 +100,12 @@ playAgainBtn.addEventListener("click", function() {
         guessedLetters.push("_");
     }
 
-
     createKeyboard();
-
-    
 
     output.innerHTML = guessedLetters.join(" ");
     hintElement.innerHTML = `Hint: ${hint}`;
     guessesElement.innerHTML = `Incorrect Guesses: ${numberOfIncorrectGuesses}/${numberOfAllowedGuesses}`;
-    
-
     hangmanImageElement.src = `../images/image${numberOfIncorrectGuesses}.png`;
-
-
-
-    
 });
 
 function createKeyboard() 
@@ -171,8 +156,6 @@ function createKeyboard()
                     hangmanImageElement.src = `../images/image${numberOfIncorrectGuesses}.png`;
                 }
                 
-
-               
                 let includesUnderscore = false;
 
                 for (let i = 0; i < guessedLetters.length; i++) {
@@ -183,25 +166,23 @@ function createKeyboard()
                 }
 
                 if (!includesUnderscore) {
-                    showWinPopup();
+                    hangmanImageElement.src = `../images/image${winningImageNumber}.png`;
+                    showPopup(true);
                 }
 
                 else if (numberOfIncorrectGuesses >= numberOfAllowedGuesses) {
-                    showLosePopup();
+                    showPopup(false);
                 }
                 else
                 {
-                    //nothing to do
+                    //do nothing
                 }
-             
-                
-
             }
         });
     }
 }
 
-function init() 
+function startGame() 
 {
     fetch(jsonFilePath).then(function (response) 
     {
@@ -243,10 +224,4 @@ function init()
 }
 
 
-
-
-
-
-
-
-init();
+startGame();
